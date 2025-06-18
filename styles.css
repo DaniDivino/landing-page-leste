@@ -19,72 +19,48 @@ body {
 }
 
 /* Header */
-.header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-}
-
-.header .container {
+/* Torna o container do logo e do menu lado a lado */
+.logo-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo-container {
-    display: flex;
-    flex-direction: column; /* Faz com que os itens dentro dele fiquem em coluna */
-    align-items: flex-start; /* Alinha os itens à esquerda */
+    padding: 20px 40px;
+    flex-wrap: wrap;
 }
 
 .logo-main {
-    display: flex; /* Faz com que a imagem e o h1 fiquem lado a lado */
-    align-items: center; /* Alinha verticalmente ao centro */
-    gap: 10px; /* Espaçamento entre o coração e o texto */
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .logo-img {
-    height: 1.2em; /* Aumenta o tamanho do coração em relação à fonte do h1 */
-    width: auto; /* Mantém a proporção da imagem */
-    vertical-align: middle; /* Alinha verticalmente com o texto */
+    height: 90px; /* Aumenta o tamanho do coração */
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #4A9EFF;
+    line-height: 1.2;
 }
 
 .logo-main h1 {
-    font-size: 2.8em; /* Aumenta bastante o tamanho da fonte do título */
-    line-height: 1; /* Garante que a altura da linha não afete o alinhamento */
-    margin: 0; /* Remove margens padrão do h1 */
-    padding: 0; /* Remove preenchimento padrão do h1 */
+    font-size: 2.8em;
+    margin: 0;
 }
 
 .logo-slogan {
-    font-size: 0.9em; /* Tamanho da fonte do slogan */
-    color: #666; /* Cor mais suave para o slogan */
-    margin-top: 5px; /* Espaçamento entre o título e o slogan */
-    margin-left: 0; /* Garante que não haja margem extra */
-}
-
-/* Media query para telas menores, se necessário ajustar */
-@media (max-width: 768px) {
-    .logo-main h1 {
-        font-size: 2em; /* Ajuste para telas menores */
-    }
-    .logo-img {
-        height: 1.1em; /* Ajuste para telas menores */
-    }
-    .logo-slogan {
-        font-size: 0.8em; /* Ajuste para telas menores */
-    }
+    font-size: 1em;
+    color: #666;
+    margin: 5px 0 0;
 }
 
 .nav {
     display: flex;
-    gap: 2rem;
+    gap: 25px;
     align-items: center;
 }
 
@@ -92,26 +68,49 @@ body {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: 0.2s;
 }
 
 .nav a:hover {
-    color: #6BB6FF;
+    color: #007BFF;
 }
 
 .cta-nav {
-    background: linear-gradient(135deg, #6BB6FF, #4A9EFF);
-    color: white !important;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
     font-weight: 600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cta-nav:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(107, 182, 255, 0.3);
+/* Responsivo */
+@media (max-width: 768px) {
+    .logo-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .logo-img {
+        height: 90px;
+    }
+
+    .logo-main h1 {
+        font-size: 2em;
+    }
+
+    .logo-slogan {
+        font-size: 0.9em;
+    }
 }
+
+
 
 /* Hero Section */
 .hero {
@@ -658,4 +657,3 @@ body {
 html {
     scroll-behavior: smooth;
 }
-
