@@ -37,6 +37,17 @@ body {
     align-items: center;
 }
 
+.logo-img {
+    height: 40px; /* Ajuste o tamanho conforme necessário */
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 30px; /* Ajuste para telas menores */
+    }
+}
+
 .logo h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
