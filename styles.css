@@ -37,31 +37,37 @@ body {
     align-items: center;
 }
 
-.logo-img {
-    height: 40px; /* Ajuste o tamanho conforme necessário */
-    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+.logo {
+    display: flex; /* Permite que os itens fiquem lado a lado */
+    align-items: center; /* Alinha verticalmente ao centro */
+    gap: 5px; /* Espaçamento entre o logo e o texto */
 }
 
-@media (max-width: 768px) {
-    .logo-img {
-        height: 30px; /* Ajuste para telas menores */
-    }
+.logo-img {
+    height: 1em; /* Faz a altura da imagem ser igual à altura da fonte do elemento pai */
+    width: auto; /* Mantém a proporção da imagem */
+    vertical-align: middle; /* Alinha verticalmente com o texto */
 }
 
 .logo h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #6BB6FF;
-    font-size: 1.8rem;
-    margin-bottom: 0.2rem;
+    display: inline; /* Garante que o h1 se comporte como texto em linha */
+    font-size: 2em; /* Exemplo: ajuste o tamanho da fonte do h1 para que o logo se alinhe */
+    line-height: 1; /* Garante que a altura da linha não afete o alinhamento */
 }
 
-.logo span {
-    font-size: 0.9rem;
-    color: #666;
-    font-weight: 300;
+.logo p {
+    margin-left: 5px; /* Ajuste o espaçamento do subtítulo se necessário */
 }
 
+/* Media query para telas menores, se necessário ajustar */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 0.8em; /* Ajuste para telas menores */
+    }
+    .logo h1 {
+        font-size: 1.5em; /* Ajuste para telas menores */
+    }
+}
 .nav {
     display: flex;
     gap: 2rem;
