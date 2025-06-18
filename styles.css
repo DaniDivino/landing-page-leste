@@ -37,37 +37,51 @@ body {
     align-items: center;
 }
 
-.logo {
-    display: flex; /* Permite que os itens fiquem lado a lado */
+.logo-container {
+    display: flex;
+    flex-direction: column; /* Faz com que os itens dentro dele fiquem em coluna */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+}
+
+.logo-main {
+    display: flex; /* Faz com que a imagem e o h1 fiquem lado a lado */
     align-items: center; /* Alinha verticalmente ao centro */
-    gap: 5px; /* Espaçamento entre o logo e o texto */
+    gap: 10px; /* Espaçamento entre o coração e o texto */
 }
 
 .logo-img {
-    height: 1em; /* Faz a altura da imagem ser igual à altura da fonte do elemento pai */
+    height: 1.2em; /* Aumenta o tamanho do coração em relação à fonte do h1 */
     width: auto; /* Mantém a proporção da imagem */
     vertical-align: middle; /* Alinha verticalmente com o texto */
 }
 
-.logo h1 {
-    display: inline; /* Garante que o h1 se comporte como texto em linha */
-    font-size: 2em; /* Exemplo: ajuste o tamanho da fonte do h1 para que o logo se alinhe */
+.logo-main h1 {
+    font-size: 2.8em; /* Aumenta bastante o tamanho da fonte do título */
     line-height: 1; /* Garante que a altura da linha não afete o alinhamento */
+    margin: 0; /* Remove margens padrão do h1 */
+    padding: 0; /* Remove preenchimento padrão do h1 */
 }
 
-.logo p {
-    margin-left: 5px; /* Ajuste o espaçamento do subtítulo se necessário */
+.logo-slogan {
+    font-size: 0.9em; /* Tamanho da fonte do slogan */
+    color: #666; /* Cor mais suave para o slogan */
+    margin-top: 5px; /* Espaçamento entre o título e o slogan */
+    margin-left: 0; /* Garante que não haja margem extra */
 }
 
 /* Media query para telas menores, se necessário ajustar */
 @media (max-width: 768px) {
-    .logo-img {
-        height: 0.8em; /* Ajuste para telas menores */
+    .logo-main h1 {
+        font-size: 2em; /* Ajuste para telas menores */
     }
-    .logo h1 {
-        font-size: 1.5em; /* Ajuste para telas menores */
+    .logo-img {
+        height: 1.1em; /* Ajuste para telas menores */
+    }
+    .logo-slogan {
+        font-size: 0.8em; /* Ajuste para telas menores */
     }
 }
+
 .nav {
     display: flex;
     gap: 2rem;
