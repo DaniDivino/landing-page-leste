@@ -71,7 +71,7 @@ Aguardo contato. Obrigado!`;
     const mensagemCodificada = encodeURIComponent(mensagem);
     
     // Número do WhatsApp (substitua pelo número real)
-    const numeroWhatsApp = '5592981277918'; // Formato: código do país + DDD + número
+    const numeroWhatsApp = '5592985277918'; // Formato: código do país + DDD + número
     
     // Criar link do WhatsApp
     const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
