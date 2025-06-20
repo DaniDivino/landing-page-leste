@@ -1,244 +1,247 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leste Conectados - Planos de Saúde sob Medida</title>
-    <meta name="description" content="Proteja o que mais importa com os melhores planos de saúde. Leste Conectados oferece soluções personalizadas para empresas, idosos e jovens. Solicite seu orçamento grátis!">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-  <div class="logo-container">
-    <div class="logo-main">
-      <img src="logo-coracaoa.png" alt="Leste Conectados Logo" class="logo-img">
-      <div class="logo-text">
-        <h1>Leste Conectados</h1>
-        <p class="logo-slogan">Conectando você ao cuidado</p>
-      </div>
-    </div>
-
-    <nav class="nav">
-      <a href="#beneficios">Benefícios</a>
-      <a href="#publicos">Planos</a>
-      <a href="#como-funciona">Como Funciona</a>
-      <a href="#orcamento" class="cta-nav">Orçamento Grátis</a>
-    </nav>
-  </div>
-</header>
-
-
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-background">
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">Proteja o que mais importa: Planos de Saúde sob Medida para Você e Sua Família/Empresa</h1>
-                    <p class="hero-subtitle">Com a Leste Conectados, você tem a experiência de um grupo líder para garantir as melhores condições e um atendimento de excelência. Receba seu orçamento grátis agora!</p>
-                    <a href="#orcamento" class="cta-button">Receba seu Orçamento Grátis!</a>
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leste Conectados - Planos de Saúde sob Medida</title>
+        <meta name="description" content="Proteja o que mais importa com os melhores planos de saúde. Leste Conectados oferece soluções personalizadas para empresas, idosos e jovens. Solicite seu orçamento grátis!">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-main">
+                    <img src="logo-coracaoa.png" alt="Leste Conectados Logo" class="logo-img">
+                    <div class="logo-text">
+                        <h1>Leste Conectados</h1>
+                        <p class="logo-slogan">Conectando você ao cuidado</p>
+                    </div>
                 </div>
-                <div class="hero-form">
-                    <div class="quick-form">
-                        <h3>Orçamento Rápido</h3>
-                        <form id="quick-form">
-                            <input type="text" placeholder="Seu nome" required>
-                            <input type="tel" placeholder="Seu telefone (WhatsApp)" required>
-                            <button type="submit">Solicitar Orçamento</button>
+
+                <nav class="nav">
+                    <a href="#beneficios">Benefícios</a>
+                    <a href="#publicos">Planos</a>
+                    <a href="#como-funciona">Como Funciona</a>
+                    <a href="#orcamento" class="cta-nav">Orçamento Grátis</a>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero" id="hero">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="promotional-card">
+                        <div class="promotional-image-container">
+                            <img src="a.png" alt="Promoções Especiais Leste Conectados" class="promotional-image" id="promotional-image">
+                            <div class="promotional-overlay">
+                                <div class="promotional-badge">
+                                    <i class="fas fa-star"></i>
+                                    <span>Oferta Especial</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promotional-content">
+                            <h3>Promoções Exclusivas</h3>
+                            <p>Confira 15% de desconto e redução de carência de consultas e exames simples para você e sua família!</p>
+                            <button class="promotional-cta-button" onclick="scrollToForm()">
+                                <i class="fas fa-arrow-down"></i>
+                                Quero a promoção!
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="hero-right-column">
+                        <div class="hero-text">
+                            <h1 class="hero-title">Proteja o que mais importa: Planos de Saúde sob Medida para Você.</h1>
+                        </div>
+
+                        <div class="plan-types-highlight">
+                            <h3>Oferecemos planos:</h3>
+                            <div class="plan-cards">
+                                <div class="plan-card">
+                                    <i class="fas fa-users"></i>
+                                    <span onclick="scrollToForm()">Familiares</span>
+                                </div>
+                                <div class="plan-card">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span onclick="scrollToForm()">Empresariais</span>
+                                </div>
+                                <div class="plan-card">
+                                    <i class="fas fa-handshake"></i>
+                                    <span onclick="scrollToForm()">Coletivos por Adesão</span>
+                                </div>
+                                <div class="plan-card">
+                                    <i class="fas fa-tooth"></i>
+                                    <span onclick="scrollToForm()">Odontológicos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="beneficios" id="beneficios">
+            <div class="container">
+                <h2 class="section-title">Sua Saúde em Boas Mãos: A Experiência que Faz a Diferença</h2>
+                <div class="beneficios-grid">
+                    <div class="beneficio-card">
+                        <div class="beneficio-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Experiência Comprovada</h3>
+                        <p>Com anos de liderança e milhares de clientes satisfeitos, a Leste Conectados garante as melhores condições e negociações exclusivas para você. Nossa força está em volume, e isso se traduz em benefícios diretos para o seu bolso e sua tranquilidade.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <div class="beneficio-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3>Atendimento Personalizado</h3>
+                        <p>Nossa equipe especializada está pronta para entender suas necessidades e encontrar o plano ideal, sem burocracia. Você não é apenas mais um número, é a nossa prioridade.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <div class="beneficio-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Ampla Rede de Parceiros</h3>
+                        <p>Trabalhamos com as maiores e melhores operadoras do mercado – como Hapvida, Samel, SulAmérica, Adventista Health e muitas outras – para oferecer a você a liberdade de escolha e a segurança de uma rede credenciada de excelência.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="publicos" id="publicos">
+            <div class="container">
+                <h2 class="section-title">Soluções Completas para Empresas, Idosos e Jovens</h2>
+                <div class="publicos-grid">
+                    <div class="publico-card">
+                        <div class="publico-image">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Para Empresas</h3>
+                        <h4>Invista no seu maior ativo</h4>
+                        <p>Garanta a saúde e o bem-estar da sua equipe com planos empresariais flexíveis e econômicos. Aumente a produtividade, reduza o absenteísmo e demonstre o cuidado da sua empresa com quem faz a diferença.</p>
+                    </div>
+                    <div class="publico-card">
+                        <div class="publico-image">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Para Idosos</h3>
+                        <h4>Cuidado e atenção que a melhor idade merece</h4>
+                        <p>Planos pensados para oferecer segurança, conforto e acesso a uma rede de especialistas dedicados, com foco na qualidade de vida e no bem-estar que você merece.</p>
+                    </div>
+                    <div class="publico-card">
+                        <div class="publico-image">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Para Jovens</h3>
+                        <h4>Comece a cuidar da sua saúde agora</h4>
+                        <p>Planos acessíveis e com cobertura ideal para quem busca praticidade, qualidade de vida e a liberdade de viver sem preocupações. Invista em você e no seu futuro.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="como-funciona" id="como-funciona">
+            <div class="container">
+                <h2 class="section-title">Simples, Rápido e Sem Complicações</h2>
+                <div class="passos-grid">
+                    <div class="passo">
+                        <div class="passo-numero">1</div>
+                        <div class="passo-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3>Preencha o Formulário</h3>
+                        <p>É rápido e fácil! Informe seus dados e o tipo de plano de interesse para começarmos.</p>
+                    </div>
+                    <div class="passo">
+                        <div class="passo-numero">2</div>
+                        <div class="passo-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Receba seu Orçamento Personalizado</h3>
+                        <p>Nossa equipe entrará em contato em tempo recorde com as melhores opções, comparando os planos ideais para o seu perfil e suas necessidades.</p>
+                    </div>
+                    <div class="passo">
+                        <div class="passo-numero">3</div>
+                        <div class="passo-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Contrate com Confiança</h3>
+                        <p>Tire todas as suas dúvidas e garanta a proteção que você e sua família merecem, com a segurança e a experiência da Leste Conectados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="orcamento" id="orcamento">
+            <div class="container">
+                <div class="orcamento-content">
+                    <div class="orcamento-text">
+                        <h2>Solicite seu Orçamento Personalizado</h2>
+                        <p>Preencha o formulário e nossa equipe entrará em contato com as melhores opções para você.</p>
+                        <div class="garantias">
+                            <div class="garantia">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Seus dados estão seguros</span>
+                            </div>
+                            <div class="garantia">
+                                <i class="fas fa-clock"></i>
+                                <span>Resposta em até 2 horas</span>
+                            </div>
+                            <div class="garantia">
+                                <i class="fas fa-gift"></i>
+                                <span>Orçamento 100% gratuito</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orcamento-form">
+                        <form id="main-form">
+                           <script src="https://js.hsforms.net/forms/embed/50179633.js" defer></script>
+                           <div class="hs-form-frame" data-region="na1" data-form-id="60e5a17d-e0f1-4361-bb3c-f272abf7f16f" 
+                                data-portal-id="50179633"></div> 
+                            </div>                            
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Seção de Beneficios -->
-    <section class="beneficios" id="beneficios">
-        <div class="container">
-            <h2 class="section-title">Sua Saúde em Boas Mãos: A Experiência que Faz a Diferença</h2>
-            <div class="beneficios-grid">
-                <div class="beneficio-card">
-                    <div class="beneficio-icon">
-                        <i class="fas fa-award"></i>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>Leste Conectados</h3>
+                        <p>Conectando você ao cuidado</p>
                     </div>
-                    <h3>Experiência Comprovada</h3>
-                    <p>Com anos de liderança e milhares de clientes satisfeitos, a Leste Conectados garante as melhores condições e negociações exclusivas para você. Nossa força está em volume, e isso se traduz em benefícios diretos para o seu bolso e sua tranquilidade.</p>
+                    <div class="footer-lider-corretora">
+                        <h3>Líder Corretora</h3>                   
+                        <p>A leste conectados é um grupo que presta serviços para líder corretora</p>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contato</h4>
+                        <p><i class="fas fa-envelope"></i> lesteconectados@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> (92) 98527-7918</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Links Úteis</h4>
+                        <a href="#beneficios">Benefícios</a>
+                        <a href="#publicos">Planos</a>
+                        <a href="#como-funciona">Como Funciona</a>
+                        <a href="#orcamento">Orçamento</a>
+                    </div>
                 </div>
-                <div class="beneficio-card">
-                    <div class="beneficio-icon">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <h3>Atendimento Personalizado</h3>
-                    <p>Nossa equipe especializada está pronta para entender suas necessidades e encontrar o plano ideal, sem burocracia. Você não é apenas mais um número, é a nossa prioridade.</p>
-                </div>
-                <div class="beneficio-card">
-                    <div class="beneficio-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3>Ampla Rede de Parceiros</h3>
-                    <p>Trabalhamos com as maiores e melhores operadoras do mercado – como Hapvida, Samel, SulAmérica, Adventista Health e muitas outras – para oferecer a você a liberdade de escolha e a segurança de uma rede credenciada de excelência.</p>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Leste Conectados. Todos os direitos reservados a Líder Corretora. <span class="cnpj-info">CNPJ: 60.504.227/0001-04</span></p>
                 </div>
             </div>
-        </div>
-    </section>
+        </footer>
 
-    <!-- Públicos Section -->
-    <section class="publicos" id="publicos">
-        <div class="container">
-            <h2 class="section-title">Soluções Completas para Empresas, Idosos e Jovens</h2>
-            <div class="publicos-grid">
-                <div class="publico-card">
-                    <div class="publico-image">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>Para Empresas</h3>
-                    <h4>Invista no seu maior ativo</h4>
-                    <p>Garanta a saúde e o bem-estar da sua equipe com planos empresariais flexíveis e econômicos. Aumente a produtividade, reduza o absenteísmo e demonstre o cuidado da sua empresa com quem faz a diferença.</p>
-                </div>
-                <div class="publico-card">
-                    <div class="publico-image">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Para Idosos</h3>
-                    <h4>Cuidado e atenção que a melhor idade merece</h4>
-                    <p>Planos pensados para oferecer segurança, conforto e acesso a uma rede de especialistas dedicados, com foco na qualidade de vida e no bem-estar que você merece.</p>
-                </div>
-                <div class="publico-card">
-                    <div class="publico-image">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Para Jovens</h3>
-                    <h4>Comece a cuidar da sua saúde agora</h4>
-                    <p>Planos acessíveis e com cobertura ideal para quem busca praticidade, qualidade de vida e a liberdade de viver sem preocupações. Invista em você e no seu futuro.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Como Funciona Section -->
-    <section class="como-funciona" id="como-funciona">
-        <div class="container">
-            <h2 class="section-title">Simples, Rápido e Sem Complicações</h2>
-            <div class="passos-grid">
-                <div class="passo">
-                    <div class="passo-numero">1</div>
-                    <div class="passo-icon">
-                        <i class="fas fa-edit"></i>
-                    </div>
-                    <h3>Preencha o Formulário</h3>
-                    <p>É rápido e fácil! Informe seus dados e o tipo de plano de interesse para começarmos.</p>
-                </div>
-                <div class="passo">
-                    <div class="passo-numero">2</div>
-                    <div class="passo-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Receba seu Orçamento Personalizado</h3>
-                    <p>Nossa equipe entrará em contato em tempo recorde com as melhores opções, comparando os planos ideais para o seu perfil e suas necessidades.</p>
-                </div>
-                <div class="passo">
-                    <div class="passo-numero">3</div>
-                    <div class="passo-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Contrate com Confiança</h3>
-                    <p>Tire todas as suas dúvidas e garanta a proteção que você e sua família merecem, com a segurança e a experiência da Leste Conectados.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Formulário Principal -->
-    <section class="orcamento" id="orcamento">
-        <div class="container">
-            <div class="orcamento-content">
-                <div class="orcamento-text">
-                    <h2>Solicite seu Orçamento Personalizado</h2>
-                    <p>Preencha o formulário abaixo e nossa equipe entrará em contato com as melhores opções para você.</p>
-                    <div class="garantias">
-                        <div class="garantia">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Seus dados estão seguros</span>
-                        </div>
-                        <div class="garantia">
-                            <i class="fas fa-clock"></i>
-                            <span>Resposta em até 2 horas</span>
-                        </div>
-                        <div class="garantia">
-                            <i class="fas fa-gift"></i>
-                            <span>Orçamento 100% gratuito</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="orcamento-form">
-                    <form id="main-form">
-                        <div class="form-group">
-                            <label for="nome">Nome Completo</label>
-                            <input type="text" id="nome" name="nome" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="telefone">Telefone (WhatsApp)</label>
-                            <input type="tel" id="telefone" name="telefone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="idade">Idade</label>
-                            <input type="number" id="idade" name="idade" min="0" max="120" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="plano">Tipo de Plano de Interesse</label>
-                            <select id="plano" name="plano" required>
-                                <option value="">Selecione uma opção</option>
-                                <option value="hapvida">Hapvida</option>
-                                <option value="samel">Samel</option>
-                                <option value="sulamerica">SulAmérica</option>
-                                <option value="adventista">Adventista Health</option>
-                                <option value="outros">Outros/Não sei</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="cta-button">Receber Orçamento Grátis!</button>
-                        <p class="form-disclaimer">Seus dados estão seguros e serão utilizados apenas para o envio do seu orçamento. Entraremos em contato em breve para oferecer as melhores condições.</p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Leste Conectados</h3>
-                    <p>Conectando você ao cuidado</p>
-                </div>
-                 <div class="footer-content">                
-                    <h3>Líder Corretora</h3>
-                    <p>A leste conectados é um grupo que presta serviços para líder corretora</p>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contato</h4>
-                    <p><i class="fas fa-envelope"></i> lesteconectados@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> (92) 98127-7918</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Links Úteis</h4>
-                    <a href="#beneficios">Benefícios</a>
-                    <a href="#publicos">Planos</a>
-                    <a href="#como-funciona">Como Funciona</a>
-                    <a href="#orcamento">Orçamento</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Leste Conectados. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        <script src="script.js"></script>
+    </body>
+    </html>
