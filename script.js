@@ -146,7 +146,3 @@ window.addEventListener('scroll', function() {
         }
     }
 });
-
-});
-
-
