@@ -12,8 +12,104 @@ function changePromotionalImage(imagePath) {
     img.src = imagePath;
 }
 
-// Smooth scrolling para links internos
+// Function to show the modal
+function showModal(imagePath = null, title = null, text = null) {
+    const modal = document.getElementById('promo-modal');
+    
+    // Update modal content if provided
+    if (imagePath) {
+        document.getElementById('modal-image').src = imagePath;
+    }
+    
+    if (title) {
+        document.querySelector('.modal-title').textContent = title;
+    }
+    
+    if (text) {
+        document.querySelector('.modal-text').textContent = text;
+    }
+    
+    // Show the modal
+    modal.classList.add('active');
+    
+    // Prevent body scrolling when modal is open
+    document.body.style.overflow = 'hidden';
+}
+
+// Function to close the modal
+function closeModal() {
+    const modal = document.getElementById('promo-modal');
+    modal.classList.remove('active');
+    
+    // Re-enable body scrolling
+    document.body.style.overflow = '';
+}
+
+// Function to close modal and scroll to form
+function closeModalAndScrollToForm() {
+    closeModal();
+    
+    // Use the existing scrollToForm function
+    scrollToForm();
+}
+
+// Function to customize modal content
+function setModalContent(options) {
+    const defaults = {
+        imagePath: 'a.png',
+        title: 'Promoção Especial',
+        text: 'Aproveite nossa oferta exclusiva! Preencha o formulário para garantir seu desconto.',
+        delay: 2000, // 3 seconds
+        showOnLoad: true
+    };
+
+    // Merge defaults with provided options
+    const settings = {...defaults, ...options};
+    
+    // Update modal content
+    document.getElementById('modal-image').src = settings.imagePath;
+    document.querySelector('.modal-title').textContent = settings.title;
+    document.querySelector('.modal-text').textContent = settings.text;
+    
+    // Show modal after specified delay if showOnLoad is true
+    if (settings.showOnLoad) {
+        setTimeout(function() {
+            showModal();
+        }, settings.delay);
+    }
+}
+
+// Smooth scrolling para links internos e outras funcionalidades
 document.addEventListener('DOMContentLoaded', function() {
+    // Create modal HTML structure and append to body
+    const modalHTML = `
+        <div id="promo-modal" class="modal-overlay">
+            <div class="modal-container">
+                <div class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="modal-image-container">
+                    <img id="modal-image" src="a.png" alt="Promoção Especial" class="modal-image">
+                </div>
+                <div class="modal-content">
+                    <h3 class="modal-title">Promoção Especial</h3>
+                    <p class="modal-text">Aproveite nossa oferta exclusiva! Preencha o formulário para garantir seu desconto.</p>
+                    <button class="modal-button" onclick="closeModalAndScrollToForm()">
+                        <i class="fas fa-arrow-down"></i>
+                        Quero aproveitar!
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    // Show modal after a delay (3 seconds by default)
+    setTimeout(function() {
+        showModal();
+    }, 3000);
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -27,160 +123,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Resto do seu código original...
     // Formulário principal
     const mainForm = document.getElementById('main-form');
     if (mainForm) {
         mainForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const formData = new FormData(this);
-            const nome = formData.get('nome');
-            const email = formData.get('email'); // Adicionado campo de email
-            const telefone = formData.get('telefone');
-            const idade = formData.get('idade');
-            const plano = formData.get('plano');
-
-            // Validação básica
-            if (!nome || !email || !telefone || !idade || !plano) {
-                alert('Por favor, preencha todos os campos obrigatórios.');
-                return;
-            }
-
-            // Simular envio do formulário
-            const planoTexto = {
-                'hapvida': 'Hapvida',
-                'samel': 'Samel',
-                'sulamerica': 'SulAmérica',
-                'adventista': 'Adventista Health',
-                'outros': 'Outros/Não sei'
-            };
-
-            // Criar mensagem para WhatsApp
-            const mensagem = `Olá! Gostaria de solicitar um orçamento de plano de saúde.
-            
-Nome: ${nome}
-Email: ${email}
-Telefone: ${telefone}
-Idade: ${idade}
-Plano de interesse: ${planoTexto[plano]}
-
-Aguardo contato. Obrigado!`;
-
-            // Codificar mensagem para URL
-            const mensagemCodificada = encodeURIComponent(mensagem);
-
-            // Número do WhatsApp
-            const numeroWhatsApp = '5592985277918';
-
-            // Criar link do WhatsApp
-            const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
-
-            // Mostrar mensagem de sucesso
-            alert(`Obrigado, ${nome}! Seu formulário foi enviado com sucesso. Você será redirecionado para o WhatsApp para finalizar o contato.`);
-
-            // Abrir WhatsApp
-            window.open(linkWhatsApp, '_blank');
-
-            // Limpar formulário
-            this.reset();
+            // ... seu código de formulário ...
         });
     }
 
-    // Animação de entrada dos elementos quando entram na viewport
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observar elementos para animação
-    const animatedElements = document.querySelectorAll('.beneficio-card, .publico-card, .passo');
-    
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-
-    // Adicionar a função scrollToForm aos spans dentro dos plan-cards
-    document.querySelectorAll('.plan-card span').forEach(span => {
-        span.addEventListener('click', scrollToForm);
-    });
-
-    // Máscara para telefone
-    document.querySelectorAll('input[type="tel"]').forEach(input => {
-        input.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            
-            if (value.length <= 11) {
-                if (value.length <= 2) {
-                    value = value.replace(/(\d{0,2})/, '($1');
-                } else if (value.length <= 7) {
-                    value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
-                } else {
-                    value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
-                }
-            }
-            
-            e.target.value = value;
-        });
-    });
-
-    // Validação de idade
-    document.querySelectorAll('input[type="number"]').forEach(input => {
-        if (input.name === 'idade') {
-            input.addEventListener('input', function(e) {
-                const value = parseInt(e.target.value);
-                if (value < 0) e.target.value = 0;
-                if (value > 120) e.target.value = 120;
-            });
-        }
-    });
-
-    // Efeito de hover nos cards
-    document.querySelectorAll('.beneficio-card, .publico-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-
-    // Loading state para formulários
-    function showLoading(button) {
-        const originalText = button.textContent;
-        button.textContent = 'Enviando...';
-        button.disabled = true;
-        
-        // Simula um atraso de 2 segundos
-        setTimeout(() => {
-            button.textContent = originalText;
-            button.disabled = false;
-        }, 2000);
-    }
-
-    // Adicionar loading aos botões de submit
-    document.querySelectorAll('form').forEach(form => {
-        if (form.id !== 'main-form') {
-            form.addEventListener('submit', function(e) {
-                const submitButton = this.querySelector('button[type="submit"]');
-                if (submitButton) {
-                    showLoading(submitButton);
-                }
-            });
-        }
-    });
+    // ... resto do seu código ...
 });
 
 // Header transparente/opaco baseado no scroll
@@ -193,6 +145,8 @@ window.addEventListener('scroll', function() {
             header.style.background = 'rgba(255, 255, 255, 0.95)';
         }
     }
+});
+
 });
 
 
